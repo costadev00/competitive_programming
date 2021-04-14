@@ -19,6 +19,5 @@ int main()
     {
         printf("%d ", arr[i]);
     }
-    cout << *max_element(arr, arr + n);
     return 0;
 }
