@@ -8,6 +8,6 @@ bool isSubmascara(int a, int b)
 
 int main()
 {
-    cout << isSubmascara(2, 445524);
+    cout << isSubmascara(2, 2);
     return 0;
 }
