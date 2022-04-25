@@ -4,13 +4,15 @@ using namespace std;
 #define INF 1000005
 #define N 3
 
-int coins[] = {1, 3, 4};
+int coins[] = {1,5};
 
 bool ready[N];
 int value[N];
 int main()
 {
-    int n = 10;
+    // int n = 10;
+    int n;
+    cin >> n;
     value[0] = 0;
     for (int x = 1; x <= n; x++)
     {

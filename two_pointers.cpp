@@ -1,32 +1,67 @@
-#include <iostream>
+#include <bits/stdc++.h>
+#define fastio                        \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL)
+
 using namespace std;
 
-const int MAXN = 1000010;
-//THIS ALGORITHM WORKS CONSIDERING A SORTED ARRAY
+typedef long long ll;
+typedef long double ld;
+
+#define endl "\n"
+#define debug(args...) cout << (#args) << " = " << (args) << endl
+#define MOD 1000000007
+#define vi vector<int>
+#define fl forward_list
+#define pb push_back
+#define pf push_front
+#define read(st) getline(cin, st)
+#define FOR(i, a, b) for (int i = a; i < b; i++)
+typedef long long ll;
 int main()
 {
-    int n, k;
-    int v[MAXN];
+    fastio;
+    // int n = 8;
+    int v[] = {1, 3, 2, 5, 1, 1, 2, 3};
+    // int o = 8;
+    // // int i = arr[0];
+    // int j = 0;
+    // int k;
+    // int sum = 0;
+    // int ans;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     sum=0;
+    //     for (k = i; k < j; k++)
+    //         sum += arr[k];
+    //     if (sum == o)
+    //     {
+    //         cout<<sum;
+    //         return 0;
+    //     }
+    //     if (sum <= o)
+    //         j++;
+    // }
+    // cout << ans;
 
-    cin >> n >> k;
+    int n = 8, k = 8;
+    // cin >> n >> k;
+    // vector<int> v(n);
 
-    for (int i = 0; i < n; i++)
-        cin >> v[i];
-
-    int i = 0, j = n - 1;
-
-    while (i <= j)
+    int l = 0, r = 0;
+    ll sum = 0;
+    while (r < n)
     {
-        if (v[i] + v[j] == k) // The pair (i,j) is an answer
+        while (r < n && sum < k)
+            sum += v[r], r++;
+        while (l < r && sum > k)
+            sum -= v[l], l++;
+        if (sum == k)
         {
-            cout << "Answer: (" << i << "," << j << ")" << endl;
-            return 0;
+            cout << l << ' ' << r - 1 << '\n';
+            break;
         }
-        else if (v[i] + v[j] < k) // Our current sum is small
-            i++;
-        else // Our current sum is too large
-            j--;
     }
 
-    cout << "There's no such pair" << endl;
+    return 0;
 }

@@ -1,0 +1,11 @@
+.vscode/
+*.exe
+*.prob
+
+debug.cpp
+debug.c
+compilar.txt
+a.txt
+escala.txt
+bits/temp.cpp
+first
